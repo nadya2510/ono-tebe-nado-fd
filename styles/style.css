@@ -5,11 +5,10 @@
   align-items: center;
   width: 100%;
   max-width: 1100px;
-  height: 293px;
-  padding: 90px 50px 96px 50px;
+  padding: 92px 50px 96px 50px;
 }
 
-.header__menu {
+.header__links-list {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -17,20 +16,27 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 21.13px;
-}
-
-.header__link_active {
-  display: list-item;
-  list-style-type: none;
-}
-.header__link {
-  display: list-item;
   list-style-type: circle;
 }
 
-.header__logo-image {
+.header__links-list-item_no-bullit {
+  list-style-type: none;
+}
+
+.header__link_active {
+  text-decoration: none;
+}
+
+.header__logo {
+  display: block;
   width: 148px;
   height: 105px;
+}
+
+.header__logo-image {
+  margin: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .address {
@@ -43,31 +49,27 @@
   line-height: 24.3px;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
+.cover {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 165px 50px 50px;
+  background-image: url(../images/cover.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
   opacity: 0.6;
   background-color: #000;
-}
-.cover {
-  position: relative;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 165px 50px 50px 50px;
-  background-image: url(../images/cover.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .cover__title {
@@ -77,18 +79,6 @@ main {
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-width: 1000px;
-  height: 385px;
-}
-
-.cover__description {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 108px;
 }
 
 .aligned-text {
@@ -107,12 +97,22 @@ main {
   text-align: center;
 }
 
+.no-letter-spacing {
+  letter-spacing: 0em;
+}
+
 .aligned-text_right {
   text-align: right;
 }
 
-.no-letter-spacing {
-  letter-spacing: 0em;
+.cover__description {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 106px;
 }
 
 .cover__description-text {
@@ -122,7 +122,7 @@ main {
   line-height: 28px;
   text-align: left;
   text-transform: uppercase;
-  word-spacing: 18px;
+  word-spacing: 18.5px;
 }
 
 .bet-button {
@@ -133,6 +133,7 @@ main {
   border: 1px #fff solid;
   padding: 0px;
   color: #fff;
+  font-family: Raleway, sans-serif;
   font-weight: 500;
   font-size: 22px;
   line-height: 25.83px;
@@ -181,30 +182,15 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 334px;
   height: 100%;
   padding: 48px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.card_type_book {
-  background-image: url(../images/card-lot-02.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.card_type_picture {
-  background-image: url(../images/card-lot-03.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .card__title {
@@ -222,20 +208,29 @@ main {
 .card__text {
   z-index: 1;
   color: #fff;
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   text-align: left;
 }
 
+.card_type_book {
+  background-image: url(../images/card-lot-02.jpg);
+}
+
+.card_type_picture {
+  background-image: url(../images/card-lot-03.jpg);
+}
+
 .lots__look-more-link {
-  margin-top: 3px;
+  margin-top: 4px;
   margin-left: 40px;
   font-weight: 400;
   font-size: 20px;
   line-height: 23.48px;
   text-align: left;
+  max-width: max-content;
 }
 
 .about {
@@ -284,8 +279,9 @@ main {
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 180px 0px 0px 50px;
+  padding: 180px 0px 82px 50px;
 }
+
 .footer .address {
   justify-self: start;
 }
@@ -300,6 +296,10 @@ main {
 
 .footer__menu-list {
   list-style-type: none;
+}
+
+.footer__menu-link_active {
+  text-decoration: none;
 }
 
 .footer__social-list {
